@@ -1,0 +1,9 @@
+model pfsp_pos.mod;
+data pfsp_pos.dat;
+option solver gurobi;
+
+solve;
+
+display pi;
+display C;
+display Cmax;
