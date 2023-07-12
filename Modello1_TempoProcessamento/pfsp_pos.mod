@@ -21,9 +21,8 @@ minimize obj: Cmax;
 
 #init var di decisione
 s.t. init:
-	forall{j in J}
-		forall{i in J}
-			x[i,j] = if j = pi[i] then 1 else 0;
+	forall{j in J, i in J}
+		x[i,j] = if j = pi[i] then 1 else 0;
 
 #each job is assigned to exactly one position
 s.t. assignement:
