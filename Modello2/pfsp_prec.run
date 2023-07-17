@@ -2,10 +2,6 @@ model pfsp_prec.mod;
 data pfsp_prec.dat;
 option solver gurobi;
 
-#for{i in J, j in J} {
-#	if 
-#}
-
 solve;
 
 display pi;
