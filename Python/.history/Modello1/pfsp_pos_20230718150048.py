@@ -48,15 +48,15 @@ model = gp.Model("pfsp_pos")
 #     for m in M:
 #         p[i, m] = random.uniform(0, 10)
 
-#Caricamento delle variabili da un file
-with open('../dati.pickle', 'rb') as file:
-    data = pickle.load(file)
+# Caricamento delle variabili da un file
+# with open('../dati.pickle', 'rb') as file:
+#     data = pickle.load(file)
 
-J = data['J']
-M = data['M']
-num_M = data['num_M']
-num_J = data['num_J']
-p = data['p']
+# J = data['J']
+# M = data['M']
+# num_M = data['num_M']
+# num_J = data['num_J']
+# p = data['p']
 
 
 s = {1: 0, 

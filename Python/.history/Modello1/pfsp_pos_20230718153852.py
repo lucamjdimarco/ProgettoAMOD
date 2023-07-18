@@ -58,6 +58,8 @@ num_M = data['num_M']
 num_J = data['num_J']
 p = data['p']
 
+print(p)
+
 
 s = {1: 0, 
      2: 0, 

@@ -33,20 +33,20 @@ model = gp.Model("pfsp_pos")
 #      (5, 3): 8,
 #      (5, 4): 11}
 
-# J = []
-# M = [1, 2, 3]
+J = []
+M = [1, 2, 3]
 
-# #inserire 21 così da avere 20 job
-# for i in range(1, 21):
-#     J.append(i)
+#inserire 21 così da avere 20 job
+for i in range(1, 21):
+    J.append(i)
 
-# num_M = 3
-# num_J = len(J)
+num_M = 3
+num_J = len(J)
 
-# p = {}
-# for i in J:
-#     for m in M:
-#         p[i, m] = random.uniform(0, 10)
+p = {}
+for i in J:
+    for m in M:
+        p[i, m] = random.uniform(0, 10)
 
 #Caricamento delle variabili da un file
 with open('../dati.pickle', 'rb') as file:

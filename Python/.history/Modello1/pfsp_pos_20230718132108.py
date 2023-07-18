@@ -6,7 +6,7 @@ import pickle
 # Creazione del modello
 model = gp.Model("pfsp_pos")
 
-#Dati
+# Dati
 # J = [1, 2, 3, 4, 5]
 # M = [1, 2, 3, 4]
 # num_J = 5
@@ -48,7 +48,7 @@ model = gp.Model("pfsp_pos")
 #     for m in M:
 #         p[i, m] = random.uniform(0, 10)
 
-#Caricamento delle variabili da un file
+# Caricamento delle variabili da un file
 with open('../dati.pickle', 'rb') as file:
     data = pickle.load(file)
 
@@ -133,6 +133,8 @@ for m in M:
 
 # Risoluzione del modello
 model.optimize()
+
+model.write("model.mps")
 
 # Stampa dei risultati
 if model.status == GRB.OPTIMAL:

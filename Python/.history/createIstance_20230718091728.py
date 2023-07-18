@@ -5,7 +5,7 @@ J = []
 M = [1, 2, 3]
 
 # Inserire 21 così da avere 20 job
-for i in range(1, 21):
+for i in range(1, 101):
     J.append(i)
 
 num_M = 3
@@ -14,7 +14,7 @@ num_J = len(J)
 p = {}
 for i in J:
     for m in M:
-        p[i, m] = random.randint(0, 10)
+        p[i, m] = random.uniform(0, 10)
 
 # Salvataggio delle variabili in un file
 data = {

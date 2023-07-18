@@ -7,31 +7,31 @@ import pickle
 model = gp.Model("pfsp_pos")
 
 #Dati
-# J = [1, 2, 3, 4, 5]
-# M = [1, 2, 3, 4]
-# num_J = 5
-# num_M = 4
+J = [1, 2, 3, 4, 5]
+M = [1, 2, 3, 4]
+num_J = 5
+num_M = 4
 
-# p = {(1, 1): 10, 
-#      (1, 2): 2, 
-#      (1, 3): 6, 
-#      (1, 4): 4, 
-#      (2, 1): 8, 
-#      (2, 2): 8, 
-#      (2, 3): 12,
-#      (2, 4): 5, 
-#      (3, 1): 4, 
-#      (3, 2): 7, 
-#      (3, 3): 4, 
-#      (3, 4): 7,
-#      (4, 1): 12, 
-#      (4, 2): 10, 
-#      (4, 3): 2,
-#      (4, 4): 10,
-#      (5, 1): 5,
-#      (5, 2): 4,
-#      (5, 3): 8,
-#      (5, 4): 11}
+p = {(1, 1): 10, 
+     (1, 2): 2, 
+     (1, 3): 6, 
+     (1, 4): 4, 
+     (2, 1): 8, 
+     (2, 2): 8, 
+     (2, 3): 12,
+     (2, 4): 5, 
+     (3, 1): 4, 
+     (3, 2): 7, 
+     (3, 3): 4, 
+     (3, 4): 7,
+     (4, 1): 12, 
+     (4, 2): 10, 
+     (4, 3): 2,
+     (4, 4): 10,
+     (5, 1): 5,
+     (5, 2): 4,
+     (5, 3): 8,
+     (5, 4): 11}
 
 # J = []
 # M = [1, 2, 3]
@@ -48,15 +48,15 @@ model = gp.Model("pfsp_pos")
 #     for m in M:
 #         p[i, m] = random.uniform(0, 10)
 
-#Caricamento delle variabili da un file
-with open('../dati.pickle', 'rb') as file:
-    data = pickle.load(file)
+# Caricamento delle variabili da un file
+# with open('../dati.pickle', 'rb') as file:
+#     data = pickle.load(file)
 
-J = data['J']
-M = data['M']
-num_M = data['num_M']
-num_J = data['num_J']
-p = data['p']
+# J = data['J']
+# M = data['M']
+# num_M = data['num_M']
+# num_J = data['num_J']
+# p = data['p']
 
 
 s = {1: 0, 

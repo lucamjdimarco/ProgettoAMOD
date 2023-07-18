@@ -1,0 +1,14 @@
+\ Model pfsp_prec_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ constraint2[1,14,18]: - C[1,14] + C[1,18] - bigM + [ x[14,18] * bigM ]
+   >= 5
+ constraint3[1,14,18]: C[1,14] - C[1,18] + [ - x[14,18] * bigM ] >= 9
+Bounds
+ C[1,14] free
+ C[1,18] free
+Binaries
+ x[14,18]
+End

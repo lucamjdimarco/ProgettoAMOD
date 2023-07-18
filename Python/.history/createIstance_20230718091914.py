@@ -14,7 +14,7 @@ num_J = len(J)
 p = {}
 for i in J:
     for m in M:
-        p[i, m] = random.randint(0, 10)
+        p[i, m] = random.uniform(0, 10)
 
 # Salvataggio delle variabili in un file
 data = {

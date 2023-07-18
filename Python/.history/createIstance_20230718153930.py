@@ -5,7 +5,7 @@ J = []
 M = [1, 2, 3]
 
 # Inserire 21 così da avere 20 job
-for i in range(1, 21):
+for i in range(1, 51):
     J.append(i)
 
 num_M = 3
