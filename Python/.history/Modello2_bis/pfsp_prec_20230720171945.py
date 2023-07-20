@@ -99,19 +99,13 @@ model.update()
 #             if(i < j):
 #                 constraint3_constr[k, i, j] = model.addConstr(C[k, i] >= p[i, k] + C[k, j] + (bigM * x[i, j]), "constraint3[%s,%s,%s]" % (1, i, j))
 
-# for k in M:
-#     for i in J:
-#         for j in J:
-#             if(i < j):
-#                 model.addConstr((x[i,j] == 1) >> (C[k, j] >= p[j, k] + C[k, i]), "constraint2[%s,%s,%s]" % (k, i, j))
-#                 model.addConstr((x[i,j] == 0) >> (C[k, i] >= p[i, k] + C[k, j]), "constraint3[%s,%s,%s]" % (k, i, j))
-
-
+#for k in M:
 for i in J:
     for j in J:
         if(i < j):
             model.addConstr((x[i,j] == 1) >> (C[1, j] >= p[j, 1] + C[1, i]), "constraint2[%s,%s,%s]" % (1, i, j))
             model.addConstr((x[i,j] == 0) >> (C[1, i] >= p[i, 1] + C[1, j]), "constraint3[%s,%s,%s]" % (1, i, j))
+
 y = {}
 c = {}
 for k in range(2, num_M + 1):
@@ -154,8 +148,8 @@ for m in M:
     for i in J:
         constraint6_constr[m, i] = model.addConstr(C[m, i] >= 0, "constraint6[%s,%s]" % (m, i))
 
-#MAX TEMPO DI ESECUZIONE = 600 SECONDI
-model.setParam('TimeLimit', 600)
+
+
 
 # model.computeIIS()
 # model.write("model.ilp")                

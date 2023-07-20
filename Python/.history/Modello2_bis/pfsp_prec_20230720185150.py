@@ -155,7 +155,7 @@ for m in M:
         constraint6_constr[m, i] = model.addConstr(C[m, i] >= 0, "constraint6[%s,%s]" % (m, i))
 
 #MAX TEMPO DI ESECUZIONE = 600 SECONDI
-model.setParam('TimeLimit', 600)
+model.setParam('TimeLimit', 900)
 
 # model.computeIIS()
 # model.write("model.ilp")                

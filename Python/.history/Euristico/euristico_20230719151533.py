@@ -28,8 +28,6 @@ import time
 #      (5, 3): 8,
 #      (5, 4): 11}
 
-start = time.time()
-
 s = {1: 0, 
      2: 0, 
      3: 0,
@@ -203,12 +201,6 @@ def main():
     print("---END---")
     print(Cmax)
     print(seqNEH)
-
-    end = time.time()
-
-    tot = end - start
-
-    print("--- %s seconds ---" % (tot))
 
     #print(Cmax)
     #print(seqNEH)

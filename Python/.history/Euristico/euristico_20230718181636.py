@@ -1,6 +1,5 @@
 import random
 import pickle
-import time
 # Dati
 # J = [1, 2, 3, 4, 5]
 # M = [1, 2, 3, 4]
@@ -27,8 +26,6 @@ import time
 #      (5, 2): 4,
 #      (5, 3): 8,
 #      (5, 4): 11}
-
-start = time.time()
 
 s = {1: 0, 
      2: 0, 
@@ -197,18 +194,12 @@ def main():
         elif j != len(seq) and Ctemp <= Cmax:
             Cmax = Ctemp
             seqNEH = seqTemp
-        elif j == (len(seq) - 1):
-            Cmax = Ctemp
-            seqNEH = seqTemp
+        # elif j == (len(seq) - 1):
+        #     Cmax = Ctemp
+        #     seqNEH = seqTemp
     print("---END---")
     print(Cmax)
     print(seqNEH)
-
-    end = time.time()
-
-    tot = end - start
-
-    print("--- %s seconds ---" % (tot))
 
     #print(Cmax)
     #print(seqNEH)

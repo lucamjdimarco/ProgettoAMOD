@@ -204,12 +204,6 @@ def main():
     print(Cmax)
     print(seqNEH)
 
-    end = time.time()
-
-    tot = end - start
-
-    print("--- %s seconds ---" % (tot))
-
     #print(Cmax)
     #print(seqNEH)
 
