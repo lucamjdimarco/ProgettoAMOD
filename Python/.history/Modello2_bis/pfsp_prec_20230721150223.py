@@ -47,6 +47,7 @@ model.update()
 
 # Vincoli
 
+
 for i in J:
     for j in J:
         if(i < j):
@@ -83,6 +84,8 @@ for k in M:
     for j in J:
         constraint8_constr[k, j] = model.addConstr(C[k, j] >= s[k] + p[j, k], "constraint8[%s,%s]" % (k, j))
 
+#constraint5_constr = model.addConstr(Cmax >= C[num_M, num_J], "constraint5")
+
 # Vincolo per trovare il tempo di completamento massimo sull'ultima macchina
 model.addGenConstrMax(max_completion_time, [C[num_M, j] for j in J], name="max_completion_constraint")
 constraint5_constr = model.addConstr(Cmax >= max_completion_time, "constraint5")
@@ -94,7 +97,9 @@ for m in M:
 
 #MAX TEMPO DI ESECUZIONE = 600 SECONDI
 model.setParam('TimeLimit', 600)
-               
+
+# model.computeIIS()
+# model.write("model.ilp")                
 model.optimize()
 
 

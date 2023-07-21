@@ -4,10 +4,10 @@ import time
 
 start = time.time()
 
-# s = {1: 0, 
-#      2: 0, 
-#      3: 0,
-#      4: 0}
+s = {1: 0, 
+     2: 0, 
+     3: 0,
+     4: 0}
 
 with open('../dati.pickle', 'rb') as file:
     data = pickle.load(file)
@@ -17,6 +17,17 @@ M = data['M']
 num_M = data['num_M']
 num_J = data['num_J']
 p = data['p']
+
+# pi = {1: 1, 
+#       2: 2, 
+#       3: 3, 
+#       4: 4,
+#       5: 5}
+
+# s = {1: 0, 
+#      2: 0, 
+#      3: 0,
+#      4: 0}
 
 def sortNEHFirstIteration(seq):
     Cmax = 0
@@ -155,6 +166,9 @@ def main():
     tot = end - start
 
     print("--- %s seconds ---" % (tot))
+
+    #print(Cmax)
+    #print(seqNEH)
 
 
 

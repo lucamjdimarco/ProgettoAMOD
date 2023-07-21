@@ -1,9 +1,0 @@
-model pfsp_prec.mod;
-data pfsp_prec.dat;
-option solver gurobi;
-
-solve;
-
-display pi;
-display C;
-display Cmax;

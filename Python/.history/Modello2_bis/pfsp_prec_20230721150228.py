@@ -94,7 +94,9 @@ for m in M:
 
 #MAX TEMPO DI ESECUZIONE = 600 SECONDI
 model.setParam('TimeLimit', 600)
-               
+
+# model.computeIIS()
+# model.write("model.ilp")                
 model.optimize()
 
 

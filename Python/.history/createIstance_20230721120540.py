@@ -4,6 +4,7 @@ import random
 J = []
 M = [1, 2, 3]
 
+# Inserire 21 così da avere 20 job
 for i in range(1, 31):
     J.append(i)
 

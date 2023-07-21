@@ -4,10 +4,10 @@ import time
 
 start = time.time()
 
-# s = {1: 0, 
-#      2: 0, 
-#      3: 0,
-#      4: 0}
+s = {1: 0, 
+     2: 0, 
+     3: 0,
+     4: 0}
 
 with open('../dati.pickle', 'rb') as file:
     data = pickle.load(file)
@@ -155,6 +155,9 @@ def main():
     tot = end - start
 
     print("--- %s seconds ---" % (tot))
+
+    #print(Cmax)
+    #print(seqNEH)
 
 
 

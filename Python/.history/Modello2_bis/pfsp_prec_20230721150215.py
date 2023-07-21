@@ -45,7 +45,31 @@ model.setObjective(Cmax, GRB.MINIMIZE)
 # Aggiornamento del modello con le variabili definite
 model.update()
 
+
 # Vincoli
+
+# constraint2_constr = {}
+# for k in M:
+#     for i in J:
+#         for j in J:
+#             if(i < j):
+#                 constraint2_constr[k, i, j] = model.addConstr(C[k, j] >= p[j, k] + C[k, i] + (bigM * (1 - x[i, j])), "constraint2[%s,%s,%s]" % (k, i, j))
+
+
+# constraint3_constr = {}
+# for k in M:
+#     for i in J:
+#         for j in J:
+#             if(i < j):
+#                 constraint3_constr[k, i, j] = model.addConstr(C[k, i] >= p[i, k] + C[k, j] + (bigM * x[i, j]), "constraint3[%s,%s,%s]" % (1, i, j))
+
+# for k in M:
+#     for i in J:
+#         for j in J:
+#             if(i < j):
+#                 model.addConstr((x[i,j] == 1) >> (C[k, j] >= p[j, k] + C[k, i]), "constraint2[%s,%s,%s]" % (k, i, j))
+#                 model.addConstr((x[i,j] == 0) >> (C[k, i] >= p[i, k] + C[k, j]), "constraint3[%s,%s,%s]" % (k, i, j))
+
 
 for i in J:
     for j in J:
@@ -83,6 +107,8 @@ for k in M:
     for j in J:
         constraint8_constr[k, j] = model.addConstr(C[k, j] >= s[k] + p[j, k], "constraint8[%s,%s]" % (k, j))
 
+#constraint5_constr = model.addConstr(Cmax >= C[num_M, num_J], "constraint5")
+
 # Vincolo per trovare il tempo di completamento massimo sull'ultima macchina
 model.addGenConstrMax(max_completion_time, [C[num_M, j] for j in J], name="max_completion_constraint")
 constraint5_constr = model.addConstr(Cmax >= max_completion_time, "constraint5")
@@ -94,7 +120,9 @@ for m in M:
 
 #MAX TEMPO DI ESECUZIONE = 600 SECONDI
 model.setParam('TimeLimit', 600)
-               
+
+# model.computeIIS()
+# model.write("model.ilp")                
 model.optimize()
 
 

@@ -44,6 +44,12 @@ model.setObjective(Cmax, GRB.MINIMIZE)
 # Vincoli
 
 
+# init_constr = {}
+# for i in J:
+#     for j in J:
+#         init_constr[i, j] = model.addConstr(x[i, j] == 1 if j == pi[i] else x[i, j] == 0, "init[%s,%s]" % (i, j))
+
+
 assignment_constr = {}
 for i in J:
     assignment_constr[i] = model.addConstr(gp.quicksum(x[i, j] for j in J) == 1, "assignment[%s]" % i)

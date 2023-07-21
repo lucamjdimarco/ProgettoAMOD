@@ -33,6 +33,8 @@ for i in J:
     for j in J:
         x[i, j] = model.addVar(vtype=GRB.BINARY, name="x[%s,%s]" % (i, j))
 
+#x = model.addVars(J, J, vtype=GRB.BINARY, name="x")
+
 Cmax = model.addVar(lb=0, vtype=GRB.CONTINUOUS, name="Cmax")
 
 # Aggiornamento del modello con le variabili definite
@@ -42,6 +44,12 @@ model.update()
 model.setObjective(Cmax, GRB.MINIMIZE)
 
 # Vincoli
+
+
+# init_constr = {}
+# for i in J:
+#     for j in J:
+#         init_constr[i, j] = model.addConstr(x[i, j] == 1 if j == pi[i] else x[i, j] == 0, "init[%s,%s]" % (i, j))
 
 
 assignment_constr = {}

@@ -156,6 +156,9 @@ def main():
 
     print("--- %s seconds ---" % (tot))
 
+    #print(Cmax)
+    #print(seqNEH)
+
 
 
 if __name__ == "__main__":

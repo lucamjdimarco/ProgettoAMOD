@@ -44,6 +44,7 @@ model.setObjective(Cmax, GRB.MINIMIZE)
 # Vincoli
 
 
+
 assignment_constr = {}
 for i in J:
     assignment_constr[i] = model.addConstr(gp.quicksum(x[i, j] for j in J) == 1, "assignment[%s]" % i)
