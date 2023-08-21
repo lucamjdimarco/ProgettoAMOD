@@ -14,7 +14,7 @@ p = {}
 
 for i in J:
     for m in M:
-        p[i, m] = random.randint(10, 30)
+        p[i, m] = random.randint(10, 300)
 
 
 # Salvataggio delle variabili in un file

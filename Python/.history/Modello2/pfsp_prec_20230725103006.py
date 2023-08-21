@@ -30,7 +30,7 @@ for i in J:
 
 Cmax = model.addVar(lb=0, vtype=GRB.CONTINUOUS, name="Cmax")
 #bigM = model.addVar(vtype=GRB.CONTINUOUS, name="bigM")
-bigM = 800
+bigM = 700
 
 max_completion_time = model.addVar(lb=0, vtype=GRB.CONTINUOUS, name="max_completion_time")
 
@@ -76,6 +76,7 @@ constraint5_constr = model.addConstr(Cmax >= max_completion_time, "constraint5")
 
 #MAX TEMPO DI ESECUZIONE = 600 SECONDI
 model.setParam('TimeLimit', 600)
+model.Params.MIPGap = 0.40
 # model.computeIIS()
 # model.write("model.ilp")  
 model.optimize()

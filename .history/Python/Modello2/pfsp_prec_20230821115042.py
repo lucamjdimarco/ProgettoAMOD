@@ -49,8 +49,8 @@ for k in M:
     for i in J:
         for j in J:
             if(i < j):
-                model.addConstr(C[k, j] >= p[j, k] + C[k, i] - bigM * (1 - x[i, j]), "constraint2[%s,%s,%s]" % (1, i, j))
-                model.addConstr(C[k, i] >= p[i, k] + C[k, j] - bigM * x[i,j], "constraint2[%s,%s,%s]" % (1, i, j))
+                model.addConstr(C[k, j] >= p[j, k] + C[k, i] + bigM * (1 - x[i, j]), "constraint2[%s,%s,%s]" % (1, i, j))
+                model.addConstr(C[k, i] >= p[i, k] + C[k, j] + bigM * x[i,j], "constraint2[%s,%s,%s]" % (1, i, j))
 
 
 constraint4_constr = {}

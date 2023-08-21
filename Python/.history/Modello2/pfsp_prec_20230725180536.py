@@ -30,7 +30,7 @@ for i in J:
 
 Cmax = model.addVar(lb=0, vtype=GRB.CONTINUOUS, name="Cmax")
 #bigM = model.addVar(vtype=GRB.CONTINUOUS, name="bigM")
-bigM = 800
+bigM = 850
 
 max_completion_time = model.addVar(lb=0, vtype=GRB.CONTINUOUS, name="max_completion_time")
 

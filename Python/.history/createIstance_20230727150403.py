@@ -4,7 +4,7 @@ import random
 J = []
 M = [1, 2, 3]
 
-for i in range(1, 36):
+for i in range(1, 26):
     J.append(i)
 
 num_M = 3
@@ -14,7 +14,7 @@ p = {}
 
 for i in J:
     for m in M:
-        p[i, m] = random.randint(10, 30)
+        p[i, m] = random.randint(1, 10)
 
 
 # Salvataggio delle variabili in un file

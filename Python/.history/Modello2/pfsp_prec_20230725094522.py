@@ -14,7 +14,6 @@ num_M = data['num_M']
 num_J = data['num_J']
 p = data['p']
 
-
 # Variabili di decisione
 C = {}
 for m in M:
@@ -30,7 +29,7 @@ for i in J:
 
 Cmax = model.addVar(lb=0, vtype=GRB.CONTINUOUS, name="Cmax")
 #bigM = model.addVar(vtype=GRB.CONTINUOUS, name="bigM")
-bigM = 800
+bigM = 700
 
 max_completion_time = model.addVar(lb=0, vtype=GRB.CONTINUOUS, name="max_completion_time")
 
