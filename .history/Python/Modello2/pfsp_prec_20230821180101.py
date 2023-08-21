@@ -75,7 +75,7 @@ for m in M:
 # constraint5_constr = model.addConstr(Cmax >= max_completion_time, "constraint5")
 constraint5_constr = {}
 for j in J:
-    constraint5_constr[num_M, j] = model.addConstr(Cmax >= C[num_M, j], "constraint5[%s,%s]" % (num_M, j))
+    constraint5_constr[num_M, j] = model.addConstr(Cmax >= C[num_M, j], "constraint5[%s,%s]" % (num_M, ))
 
 #MAX TEMPO DI ESECUZIONE = 600 SECONDI
 model.setParam('TimeLimit', 600)

@@ -73,9 +73,7 @@ for m in M:
 # Vincolo per trovare il tempo di completamento massimo sull'ultima macchina
 # model.addGenConstrMax(max_completion_time, [C[num_M, j] for j in J], name="max_completion_constraint")
 # constraint5_constr = model.addConstr(Cmax >= max_completion_time, "constraint5")
-constraint5_constr = {}
-for j in J:
-    constraint5_constr[num_M, j] = model.addConstr(Cmax >= C[num_M, j], "constraint5[%s,%s]" % (num_M, j))
+constraint5_constr = model.addConstr(Cmax >= C[num_M, num_J], "constraint5")
 
 #MAX TEMPO DI ESECUZIONE = 600 SECONDI
 model.setParam('TimeLimit', 600)

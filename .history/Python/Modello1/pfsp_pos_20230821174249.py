@@ -51,7 +51,7 @@ constraint1_constr = model.addConstr(C[1, 1] >= gp.quicksum(p[j, 1] * x[1, j] fo
 
 constraint2_constr = {}
 for i in range(2, num_J + 1):
-    constraint2_constr[i] = model.addConstr(C[1, i] >= C[1, i - 1] + gp.quicksum(p[j, 1] * x[i, j] for j in J), "constraint2[%s]" % i)
+    constraint2_constr[i] = model.addConstr(C[1, i] >= s[1] + C[1, i - 1] + gp.quicksum(p[j, 1] * x[i, j] for j in J), "constraint2[%s]" % i)
 
 constraint3_constr = {}
 for m in range(2, num_M + 1):
@@ -61,7 +61,7 @@ for m in range(2, num_M + 1):
 constraint4_constr = {}
 for m in M:
     for i in range(2, num_J + 1):
-        constraint4_constr[m, i] = model.addConstr(C[m, i] >= C[m, i - 1] + gp.quicksum(p[j, m] * x[i, j] for j in J), "constraint4[%s,%s]" % (m, i))
+        constraint4_constr[m, i] = model.addConstr(C[m, i] >= s[m] + C[m, i - 1] + gp.quicksum(p[j, m] * x[i, j] for j in J), "constraint4[%s,%s]" % (m, i))
 
 constraint5_constr = model.addConstr(Cmax >= C[num_M, num_J], "constraint5")
 
