@@ -68,17 +68,13 @@ def sortNEHIteration(seq):
         for m in M:
             for j in range(0,len(seq)):
                 if m == 1:
-                    #primo job su prima macchina
                     if j == 0:
                         Ctemp1[seq[j], m] = p[seq[j], m]
                     else: 
-                        #altri job su prima macchina
                         Ctemp1[seq[j], m] = Ctemp1[seq[j-1], m] + p[seq[j], m]
                 else:
-                    #primo job su altre macchine successive alla prima
                     if j == 0:
                         Ctemp1[seq[j], m] = Ctemp1[seq[j], m-1] + p[seq[j], m]
-                    #altri job su altre macchine successive alla prima
                     else:
                         Ctemp1[seq[j], m] = max(Ctemp1[seq[j-1], m], Ctemp1[seq[j], m-1]) + p[seq[j], m]
         
@@ -121,10 +117,11 @@ def main():
     sorted_dictionary = sorted(jobDict.items(), key=lambda x: x[1], reverse=True)
 
 
-    #COSTRUISCO LA SEQUENZA INIZIALE (con sorted_dictionary[i][0] identifico il job j-esimo)
+    #COSTRUISCO LA SEQUENZA INIZIALE
     seq = []
     for i in range(len(sorted_dictionary)):
         seq.append(sorted_dictionary[i][0])
+        print(sorted_dictionary)
 
     #TROVO LA MIGLIORE SEQUENZA TRA I PRIMI DUE JOB
     Cmax, seqNEH = sortNEHFirstIteration(seq[:2])
