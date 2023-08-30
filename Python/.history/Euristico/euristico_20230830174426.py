@@ -138,7 +138,15 @@ def main():
         Ctemp, seqTemp = sortNEHIteration(seqNEH)
         Cmax = Ctemp
         seqNEH = seqTemp
-        
+        # if j == 2:
+        #     Cmax = Ctemp
+        #     seqNEH = seqTemp
+        # elif j != len(seq) and Ctemp <= Cmax:
+        #     Cmax = Ctemp
+        #     seqNEH = seqTemp
+        # elif j == (len(seq) - 1):
+        #     Cmax = Ctemp
+        #     seqNEH = seqTemp
     print("---END---")
     print(Cmax)
     print(seqNEH)
